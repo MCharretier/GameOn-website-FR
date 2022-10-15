@@ -304,6 +304,7 @@ input[data-error]::after {
   height: 32px;
   opacity: 1;
   cursor: pointer;
+  z-index: 10;
   transform: scale(0.7);
 }
 .close:before,
@@ -332,6 +333,39 @@ input[data-error]::after {
   color: #fff;
   cursor: pointer;
   border: 0;
+}
+.form-validation {
+  width: 100%;
+  height: 100%;
+  padding: 0 8%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #232323;
+  transform: translateY(100%);
+  transition: 0.3s;
+}
+.form-validation.active {
+  transform: translateY(0);
+}
+.form-validation .content-container {
+  flex: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-validation .button-container {
+  flex: 10%;
+}
+.form-validation p{
+  text-align: center;
+  font-size: 30px;
+  line-height: 42px;
+}
+.btn-valid:hover {
+  background: #fe142f;
 }
 /* custom select styles */
 .custom-select {

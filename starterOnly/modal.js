@@ -11,7 +11,10 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const modalClose = document.querySelector(".close");
+const validClose = document.querySelector(".btn-valid");
 const formData = document.querySelectorAll(".formData");
+const validForm = document.querySelector('.form-validation');
+const form = document.querySelector('#reserve');
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -24,6 +27,11 @@ function launchModal() {
 // Close modal
 modalClose.addEventListener("click", function(){
   modalbg.style.display = "none";
+  validForm.classList.remove('active');
+});
+validClose.addEventListener("click", function(){
+  modalbg.style.display = "none";
+  validForm.classList.remove('active');
 });
 
 // onSubmit modal form
@@ -44,6 +52,12 @@ function validate(event) {
 
   // Init error state
   var error = false;
+
+  // Remove data-error attributes
+  formData.forEach((e)=> {
+    e.removeAttribute('data-error-visible');
+    e.removeAttribute('data-error');
+  });
 
   // Check First field
   if (first && first.value.length < 2) {
@@ -109,10 +123,7 @@ function validate(event) {
 
   // If there are no errors
   if (!error) {
-    modalbg.style.display = "none";
-  }
-  // Else errors are displayed
-  else {
-    console.log("Formulaire invalide !");
+    validForm.classList.add('active');
+    form.reset();
   }
 }
