@@ -65,11 +65,21 @@ function validate(event) {
     first.parentElement.setAttribute('data-error', 'Veuillez entrer 2 caractères ou plus pour le champ du prénom.');
     error = true;
   }
+  if (first && /[0-9]/.test(first.value)) {
+    first.parentElement.setAttribute('data-error-visible', 'true');
+    first.parentElement.setAttribute('data-error', 'Le prénom ne peut pas contenir des chiffres.');
+    error = true;
+  }
 
-  // Check First field
+  // Check Last field
   if (last && last.value.length < 2) {
     last.parentElement.setAttribute('data-error-visible', 'true');
     last.parentElement.setAttribute('data-error', 'Veuillez entrer 2 caractères ou plus pour le champs du nom.');
+    error = true;
+  }
+  if (last && /[0-9]/.test(last.value)) {
+    last.parentElement.setAttribute('data-error-visible', 'true');
+    last.parentElement.setAttribute('data-error', 'Le nom ne peut pas contenir des chiffres.');
     error = true;
   }
 
