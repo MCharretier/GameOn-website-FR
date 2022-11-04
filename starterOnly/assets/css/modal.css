@@ -71,6 +71,8 @@ img {
 .topnav .icon {
   display: none;
   color: #fe142f;
+  padding: 8px;
+  margin: 0;
 }
 
 main {
@@ -157,10 +159,10 @@ main {
 
 label {
   font-family: var(--font-default);
-  font-size: 17px;
+  font-size: 14px;
   font-weight: normal;
   display: inline-block;
-  margin-bottom: 11px;
+  margin-bottom: 10px;
 }
 input {
   padding: 8px;
@@ -199,6 +201,7 @@ input {
   margin-left: 36px;
   font-size: 12px;
   font-weight: normal;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 .checkbox-label .checkbox-icon,
 .checkbox2-label .checkbox-icon {
@@ -409,11 +412,10 @@ input {
   box-shadow: 0px 12px 12px rgba(0, 0, 0, 0.25);
 }
 .hero-content {
-  padding: 70px 56px;
+  padding: 55px 56px 70px;
   grid-column: span 5;
   background: #232323;
   color: #fff;
-  position: relative;
   text-align: left;
 }
 .hero-content > * {
@@ -427,7 +429,7 @@ input {
 }
 .hero-text {
   font-weight: 400;
-  margin: 73px 0;
+  margin: 70px 0;
   padding: 0;
 }
 .btn-signup {
@@ -453,8 +455,7 @@ input {
 .copyrights {
   color: #fe142f;
   padding: 0;
-  font-size: 1rem;
-  /* margin: 60px 0 30px; */
+  font-size: 15px;
   font-weight: 500;
   font-family: 'Roboto', sans-serif;
 }
@@ -475,6 +476,7 @@ footer {
   .topnav a.icon {
     display: block;
     font-size: 30px;
+    line-height: 30px;
     font-weight: 500;
   }
   .topnav.responsive {
@@ -567,31 +569,36 @@ footer {
 
 @media screen and (max-width: 540px) {
   .topnav {
-    padding: 30px;
+    padding: 20px 30px 16px;
   }
-  .topnav .icon {
-    font-size: 28px;
+  .topnav a {
+    font-size: 16px;
+  }
+  .topnav a.icon {
+    font-size: 26px;
+    line-height: 26px;
   }
   .responsive .main-navbar {
-    top: 95px;
+    top: 70px;
     right: 30px;
   }
   main {
     padding: 0 30px;
   }
   .header-logo {
-    height: 30px;
+    height: 25px;
   }
   .hero-headline {
     font-size: 40px;
+    line-height: 52px;
     white-space: normal;
   }
   .hero-headline br{
     display: none;
   }
   .hero-text {
-    font-size: 16px;
-    margin: 35px 0;
+    font-size: 13px;
+    margin: 25px 0;
   }
   .hero-img img {
     border-radius: 10px;
@@ -605,20 +612,45 @@ footer {
   .bground {
     top: unset;
     bottom: 0;
-    height: calc(100vh - 130px);
+    height: calc(100vh - 80px);
     width: 100%;
     background-color: #232323;
     border-radius: 8px 8px 0 0;
   }
   .content {
     margin: 0 auto;
+    padding-top: 0;
+  }
+  .modal-body {
+    padding: 15px 30px;
+  }
+  .close {
+    right: 15px;
+    top: 15px;
+    width: 26px;
+    height: 26px;
+  }
+  .close:before,
+  .close:after {
+    left: 12px;
+    height: 25px;
+    width: 3px;
+  }
+  .text-control {
+    font-size: 18px;
+    line-height: 18px;
+    height: 42px;
+  }
+  .text-control::placeholder {
+    font-size: 18px;
   }
   .btn-submit {
     font-size: 16px;
     padding: 8px 35px;
+    margin: 12px auto 0;
   }
   footer {
-    padding: 50px 30px 30px;
+    padding: 25px 30px;
   }
   .copyrights {
     font-size: 12px;
